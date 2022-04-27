@@ -1,10 +1,10 @@
 ## Fetch Rewards Challenge
 
-This project is for the coding project given by Fetch Reawrds. The instructions are in this [PDF](./points.pdf) which will show the project objectives. FastAPI is used for the implementation of the project.
+This project is for the coding project given by Fetch Rewards. The instructions are in this [PDF](./points.pdf) which will show the project objectives. FastAPI is used for the implementation of the project.
 
 # Installation
 
-Python3 should be installed to run the code. Also, the following uses the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependencies needed for this project. I have created a bash script to install the dependencies which can be viewed [hear](./downloads.sh) and run as such below in a terminal.
+[Python3](https://www.python.org/downloads/) should be installed to run the code. Also, the following uses the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependencies needed for this project. I have created a bash script to install the dependencies which can be viewed [here](./downloads.sh) and can be run as shown below in a terminal.
 
 ```bash
 ./downloads.sh
@@ -18,15 +18,15 @@ chmod +x downloads.sh
 
 # Paths
 1. Add transactions for a specific payer and date.
-⋅⋅* http://127.0.0.1:8000/add
+    * http://127.0.0.1:8000/add
 2. Spend points using the rules above and return a list of ​{ "payer": <string>, "points": <integer> }​ for each call.
-⋅⋅* http://127.0.0.1:8000/spend
+    * http://127.0.0.1:8000/spend
 3. Return all payer point balances.
-⋅⋅* http://127.0.0.1:8000/balance
+    * http://127.0.0.1:8000/balance
 
 # Testing
 
-For testing purposes I would recommned using unvicorn (which should be installed if downloads.sh is executed) and curl. First in one open terminal run the command that follows.
+For testing purposes there are two ways I will demonstrate. First is using unvicorn (which should be installed if downloads.sh is executed) and curl. In one open terminal run the command that follows.
 
 ```bash
 uvicorn main:app --reload
@@ -50,4 +50,4 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-Also, there is another way to test by having the first terminal still open with the unvicorn call running and then going to http://127.0.0.1:8000/docs which will provide a user interface to make the post and get calls while allowing one to type in the json needed. Futhermore, there is a testing file call [test_run.sh](./test_run.sh) which has a basic test in it with more examples to look at.
+The second way to test is by having the first terminal still open with the unvicorn call running and then going to http://127.0.0.1:8000/docs which will provide a user interface to make the post and get calls while allowing one to type in the json needed. Futhermore, there is a testing file called [test_run.sh](./test_run.sh) which has a basic test in it with more examples to look at.
